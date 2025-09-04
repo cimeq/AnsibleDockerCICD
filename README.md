@@ -6,7 +6,7 @@ Localy you can do:
 
 ## Build
 ```
-docker build --tag salco/ansible-docker-cicd:lastest --no-cache --rm -f ./Dockerfile .
+docker build --tag salco/ansible-cicd:lastest --no-cache --rm -f ./Dockerfile .
 ```
 
 ## Tests

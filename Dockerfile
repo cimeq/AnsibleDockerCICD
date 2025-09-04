@@ -1,4 +1,4 @@
-FROM ubuntu:jammy AS baseBuild
+FROM ubuntu:noble AS basebuild
 LABEL maintainer="Alexandre Salconi-Denis <asalconi@cimeq.qc.ca>"
 LABEL Description="Image for runing ansible in a Jenkins CICD"
 
@@ -15,10 +15,10 @@ RUN apt update && \
     && apt clean
 
 #RUN alias python=python3
-RUN python -m pip install ansible
+RUN python -m pip install ansible --break-system-packages
 
 
-FROM baseBuild AS ansibleCICD
+FROM basebuild AS ansiblecicd
 LABEL maintainer="Alexandre Salconi-Denis <asalconi@cimeq.qc.ca>"
 LABEL Description="Image for runing ansible in a Jenkins CICD"
 
