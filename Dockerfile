@@ -22,5 +22,12 @@ FROM basebuild AS ansiblecicd
 LABEL maintainer="Lara Salconi-Denis <lsalconi@cimeq.qc.ca>"
 LABEL Description="Image for runing ansible in a Jenkins CICD"
 
+RUN groupadd -g 111 cicd && \
+    useradd -m -u 111 -g cicd cicd
+USER cicd
+WORKDIR /home/cicd
+WORKDIR /project
+
+ENV HOME=/home/cicd
 RUN ansible --version
 
