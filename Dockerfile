@@ -1,5 +1,5 @@
 FROM ubuntu:noble AS basebuild
-LABEL maintainer="Alexandre Salconi-Denis <asalconi@cimeq.qc.ca>"
+LABEL maintainer="Lara Salconi-Denis <lsalconi@cimeq.qc.ca>"
 LABEL Description="Image for runing ansible in a Jenkins CICD"
 
 
@@ -19,7 +19,7 @@ RUN python -m pip install ansible --break-system-packages
 
 
 FROM basebuild AS ansiblecicd
-LABEL maintainer="Alexandre Salconi-Denis <asalconi@cimeq.qc.ca>"
+LABEL maintainer="Lara Salconi-Denis <lsalconi@cimeq.qc.ca>"
 LABEL Description="Image for runing ansible in a Jenkins CICD"
 
 RUN ansible --version
